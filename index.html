@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Serate Discoteca</title>
+    <style>
+        body { font-family: 'Helvetica', sans-serif; background-color: #050505; color: white; margin: 0; padding: 20px; text-align: center; }
+        h1 { text-transform: uppercase; letter-spacing: 2px; margin-bottom: 40px; }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; max-width: 1200px; margin: 0 auto; }
+        .photo-card { background: #111; padding: 10px; border-radius: 8px; border: 1px solid #222; }
+        img { width: 100%; height: auto; border-radius: 5px; display: block; }
+        .footer { margin-top: 50px; color: #555; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+    <h1>Le Foto della Serata</h1>
+
+    <div class="gallery">
+        <div class="photo-card">
+            <img src="https://via.placeholder.com/600x400/222/fff?text=Foto+1" alt="Serata">
+        </div>
+        <div class="photo-card">
+            <img src="https://via.placeholder.com/600x400/222/fff?text=Foto+2" alt="Serata">
+        </div>
+    </div>
+
+    <div class="footer">Creato con Vercel & GitHub</div>
+
+</body>
+</html>
