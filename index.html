@@ -3,135 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TIMELESS EVENTS | Hub</title>
+    <title>TIMELESS EVENTS</title>
     <style>
-        /* COLORI LOGHI */
         :root {
-            --timeless-purple: #c71efb;
             --pov-pink: #ff00ab;
-            --pov-cyan: #00f2ff;
-            --dark-bg: #000000;
-            --card-bg: #0a0a0a;
+            --t2a-cyan: #00f2ff;
+            --bg: #000;
         }
 
         body {
-            background-color: var(--dark-bg);
+            background-color: var(--bg);
             color: white;
             font-family: 'Inter', sans-serif;
             margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
+            overflow-x: hidden;
         }
 
-        /* HEADER COL LOGO TIMELESS */
-        header {
-            padding: 50px 20px;
-            text-align: center;
-        }
-
-        .main-logo {
-            width: 200px; /* Logo Timeless */
-            filter: drop-shadow(0 0 10px rgba(199, 30, 251, 0.3));
-        }
-
-        /* GRIGLIA SEZIONI */
-        .hub-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            width: 90%;
-            max-width: 1000px;
-            margin-bottom: 50px;
-        }
-
-        .card {
-            background: var(--card-bg);
-            border: 1px solid #1a1a1a;
-            border-radius: 20px;
-            padding: 40px;
-            text-align: center;
-            text-decoration: none;
-            color: white;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        /* --- SCHERMATA HOME --- */
+        #home-screen {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 300px;
+            min-height: 100vh;
+            text-align: center;
         }
 
-        /* EFFETTI HOVER P.O.V. */
-        .card-pov:hover {
-            border-color: var(--pov-pink);
-            box-shadow: 0 0 40px rgba(255, 0, 171, 0.2);
-            transform: translateY(-10px);
+        .main-logo-timeless {
+            width: 200px;
+            margin-bottom: 50px;
         }
 
-        /* EFFETTI HOVER TIME2APE */
-        .card-t2a:hover {
-            border-color: var(--pov-cyan);
-            box-shadow: 0 0 40px rgba(0, 242, 255, 0.2);
-            transform: translateY(-10px);
+        .hub-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            width: 90%;
+            max-width: 900px;
         }
 
-        .card img {
-            max-width: 180px;
-            margin-bottom: 20px;
-        }
-
-        .btn {
-            margin-top: 20px;
-            font-size: 0.8rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            padding: 10px 25px;
-            border-radius: 50px;
-            border: 1px solid #333;
+        .choice-card {
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            border-radius: 20px;
+            padding: 40px;
+            cursor: pointer;
             transition: 0.3s;
         }
 
-        .card-pov:hover .btn { background: var(--pov-pink); color: black; border-color: var(--pov-pink); }
-        .card-t2a:hover .btn { background: var(--pov-cyan); color: black; border-color: var(--pov-cyan); }
+        .choice-card:hover { transform: translateY(-10px); }
+        .card-pov:hover { border-color: var(--pov-pink); box-shadow: 0 0 30px rgba(255, 0, 171, 0.2); }
+        .card-t2a:hover { border-color: var(--t2a-cyan); box-shadow: 0 0 30px rgba(0, 242, 255, 0.2); }
 
-        footer {
-            margin-top: auto;
+        .choice-card img { width: 150px; }
+
+        /* --- SCHERMATA GALLERY (Nascosta all'inizio) --- */
+        #gallery-screen {
+            display: none;
             padding: 20px;
-            color: #333;
-            font-size: 0.7rem;
-            letter-spacing: 1px;
         }
 
-        @media (max-width: 600px) {
-            .hub-container { grid-template-columns: 1fr; }
+        header {
+            padding: 30px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            background: rgba(0,0,0,0.9);
+            z-index: 10;
         }
+
+        .btn-back {
+            background: none;
+            border: 1px solid #333;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        .grid img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .hidden { display: none !important; }
     </style>
 </head>
 <body>
 
-    <header>
-        <img src="https://via.placeholder.com/300x300/000/fff?text=LOGO+TIMELESS" class="main-logo" alt="Timeless">
-    </header>
-
-    <div class="hub-container">
-        
-        <a href="/pov" class="card card-pov">
-            <img src="https://via.placeholder.com/200x100/000/fff?text=LOGO+POV" alt="P.O.V.">
-            <div class="btn">Entra nella Gallery</div>
-        </a>
-
-        <a href="/time2ape" class="card card-t2a">
-            <img src="https://via.placeholder.com/200x100/000/fff?text=TIME2APE" alt="Time2Ape">
-            <div class="btn">Entra nella Gallery</div>
-        </a>
-
+    <div id="home-screen">
+        <img src="URL_LOGO_TIMELESS_CLOUDINARY" class="main-logo-timeless" alt="Timeless">
+        <div class="hub-grid">
+            <div class="choice-card card-pov" onclick="openGallery('pov')">
+                <img src="URL_LOGO_POV_CLOUDINARY" alt="POV">
+                <p>VEDI FOTO</p>
+            </div>
+            <div class="choice-card card-t2a" onclick="openGallery('t2a')">
+                <img src="https://via.placeholder.com/150x80?text=TIME2APE" alt="T2A">
+                <p>VEDI FOTO</p>
+            </div>
+        </div>
     </div>
 
-    <footer>
-        &copy; 2024 TIMELESS PRODUCTIONS
-    </footer>
+    <div id="gallery-screen">
+        <header>
+            <h1 id="gallery-title">GALLERY</h1>
+            <button class="btn-back" onclick="closeGallery()">← TORNA INDIETRO</button>
+        </header>
+        <div class="grid" id="photo-grid"></div>
+    </div>
 
+    <script>
+        // --- I TUOI ELENCHI FOTO ---
+        const fotoPOV = [
+            "URL_FOTO_POV_1",
+            "URL_FOTO_POV_2"
+        ];
+
+        const fotoT2A = [
+            "URL_FOTO_T2A_1",
+            "URL_FOTO_T2A_2"
+        ];
+
+        function openGallery(type) {
+            const home = document.getElementById('home-screen');
+            const gallery = document.getElementById('gallery-screen');
+            const grid = document.getElementById('photo-grid');
+            const title = document.getElementById('gallery-title');
+            
+            grid.innerHTML = ''; // Svuota gallery precedente
+            home.classList.add('hidden');
+            gallery.style.display = 'block';
+
+            let lista = type === 'pov' ? fotoPOV : fotoT2A;
+            title.innerText = type === 'pov' ? 'P.O.V. GALLERY' : 'TIME2APE GALLERY';
+            title.style.color = type === 'pov' ? 'var(--pov-pink)' : 'var(--t2a-cyan)';
+
+            lista.forEach(url => {
+                const img = document.createElement('img');
+                img.src = url;
+                img.loading = "lazy";
+                grid.appendChild(img);
+            });
+        }
+
+        function closeGallery() {
+            document.getElementById('home-screen').classList.remove('hidden');
+            document.getElementById('gallery-screen').style.display = 'none';
+        }
+    </script>
 </body>
-</html>ml>
+</html>
