@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TIMELESS EVENTS | Hub</title>
+    <title>TIMELESS EVENTS | Official Gallery</title>
     <style>
-        /* COLORI LOGHI */
         :root {
             --timeless-purple: #c71efb;
             --pov-pink: #ff00ab;
-            --pov-cyan: #00f2ff;
+            --t2a-cyan: #00f2ff;
             --dark-bg: #000000;
-            --card-bg: #0a0a0a;
         }
 
         body {
@@ -21,117 +19,216 @@
             margin: 0;
             display: flex;
             flex-direction: column;
-            align-items: center;
             min-height: 100vh;
         }
 
-        /* HEADER COL LOGO TIMELESS */
-        header {
-            padding: 50px 20px;
-            text-align: center;
+        /* --- HOME --- */
+        #home-page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            padding-bottom: 50px;
         }
 
-        .main-logo {
-            width: 200px; /* Logo Timeless */
-            filter: drop-shadow(0 0 10px rgba(199, 30, 251, 0.3));
-        }
+        header { padding: 60px 20px; text-align: center; }
+        .main-logo { width: 220px; filter: drop-shadow(0 0 15px rgba(199, 30, 251, 0.4)); }
 
-        /* GRIGLIA SEZIONI */
         .hub-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             width: 90%;
             max-width: 1000px;
-            margin-bottom: 50px;
         }
 
         .card {
-            background: var(--card-bg);
+            background: #080808;
             border: 1px solid #1a1a1a;
-            border-radius: 20px;
-            padding: 40px;
+            border-radius: 24px;
+            padding: 50px 30px;
             text-align: center;
-            text-decoration: none;
-            color: white;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            transition: all 0.4s ease;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 300px;
+            height: 320px;
         }
 
-        /* EFFETTI HOVER P.O.V. */
-        .card-pov:hover {
-            border-color: var(--pov-pink);
-            box-shadow: 0 0 40px rgba(255, 0, 171, 0.2);
-            transform: translateY(-10px);
+        .card-pov:hover { border-color: var(--pov-pink); box-shadow: 0 0 40px rgba(255, 0, 171, 0.15); transform: translateY(-10px); }
+        .card-t2a:hover { border-color: var(--t2a-cyan); box-shadow: 0 0 40px rgba(0, 242, 255, 0.15); transform: translateY(-10px); }
+        
+        .card img { max-width: 200px; margin-bottom: 25px; }
+        .btn-label { font-weight: 800; letter-spacing: 3px; font-size: 0.8rem; opacity: 0.7; }
+
+        /* --- GALLERY --- */
+        #gallery-page {
+            display: none;
+            width: 100%;
         }
 
-        /* EFFETTI HOVER TIME2APE */
-        .card-t2a:hover {
-            border-color: var(--pov-cyan);
-            box-shadow: 0 0 40px rgba(0, 242, 255, 0.2);
-            transform: translateY(-10px);
+        .gallery-header {
+            text-align: center;
+            padding: 40px 20px;
+            position: sticky;
+            top: 0;
+            background: rgba(0,0,0,0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid #111;
         }
 
-        .card img {
-            max-width: 180px;
-            margin-bottom: 20px;
-        }
-
-        .btn {
-            margin-top: 20px;
-            font-size: 0.8rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        .btn-back {
+            background: #111;
+            border: 1px solid #333;
+            color: white;
             padding: 10px 25px;
             border-radius: 50px;
-            border: 1px solid #333;
+            cursor: pointer;
+            margin-top: 15px;
+            font-weight: bold;
             transition: 0.3s;
         }
+        .btn-back:hover { background: #222; border-color: #555; }
 
-        .card-pov:hover .btn { background: var(--pov-pink); color: black; border-color: var(--pov-pink); }
-        .card-t2a:hover .btn { background: var(--pov-cyan); color: black; border-color: var(--pov-cyan); }
-
-        footer {
-            margin-top: auto;
-            padding: 20px;
-            color: #333;
-            font-size: 0.7rem;
-            letter-spacing: 1px;
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 10px;
+            padding: 10px;
+            max-width: 1600px;
+            margin: 0 auto;
         }
 
-        @media (max-width: 600px) {
-            .hub-container { grid-template-columns: 1fr; }
+        .photo-grid img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 4px;
+            background: #0a0a0a;
+            transition: opacity 0.3s;
         }
+
+        footer { margin-top: auto; padding: 40px; text-align: center; color: #333; font-size: 0.7rem; letter-spacing: 2px; }
+        .hidden { display: none !important; }
     </style>
 </head>
 <body>
 
-    <header>
-        <img src="https://via.placeholder.com/300x300/000/fff?text=LOGO+TIMELESS" class="main-logo" alt="Timeless">
-    </header>
+    <div id="home-page">
+        <header>
+            <img src="https://res.cloudinary.com/digxjfslu/image/upload/v1740003058/TIMELESS_2_ezvclq.jpg" class="main-logo" alt="Timeless">
+        </header>
 
-    <div class="hub-container">
-        
-        <a href="/pov" class="card card-pov">
-            <img src="https://via.placeholder.com/200x100/000/fff?text=LOGO+POV" alt="P.O.V.">
-            <div class="btn">Entra nella Gallery</div>
-        </a>
+        <div class="hub-container">
+            <div class="card card-pov" onclick="mostraGallery('pov')">
+                <img src="https://res.cloudinary.com/digxjfslu/image/upload/v1740003058/LOGO_NEON_q3tpxq.jpg" alt="P.O.V.">
+                <div class="btn-label">SCOPRI P.O.V.</div>
+            </div>
 
-        <a href="/time2ape" class="card card-t2a">
-            <img src="https://via.placeholder.com/200x100/000/fff?text=TIME2APE" alt="Time2Ape">
-            <div class="btn">Entra nella Gallery</div>
-        </a>
-
+            <div class="card card-t2a" onclick="mostraGallery('t2a')">
+                <img src="https://res.cloudinary.com/digxjfslu/image/upload/v1776773228/senza_titolo_a4mnbk.jpg" alt="Time2Ape" style="border-radius: 10px;">
+                <div class="btn-label">SCOPRI TIME2APE</div>
+            </div>
+        </div>
     </div>
 
-    <footer>
-        &copy; 2024 TIMELESS PRODUCTIONS
-    </footer>
+    <div id="gallery-page">
+        <div class="gallery-header">
+            <h1 id="titolo-gallery" style="letter-spacing: 8px; margin: 0;">GALLERY</h1>
+            <button class="btn-back" onclick="tornaHome()">← TORNA ALLA HOME</button>
+        </div>
+        <div class="photo-grid" id="griglia-foto"></div>
+    </div>
 
+    <footer>&copy; 2024 TIMELESS PRODUCTIONS</footer>
+
+    <script>
+        // --- SEZIONE FOTO POV (Incolla i link qui quando li avrai) ---
+        const fotoPOV = [
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1740003058/LOGO_NEON_q3tpxq.jpg"
+        ];
+
+        // --- SEZIONE FOTO TIME2APE (Caricate!) ---
+        const fotoT2A = [
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773228/senza_titolo_a4mnbk.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773226/senza_titolo-49_s8grlq.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773224/senza_titolo-48_e6srne.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773221/senza_titolo-47_o8rdwi.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773220/senza_titolo-46_c7nb2n.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773219/senza_titolo-45_zyv4of.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773216/senza_titolo-44_lrkkov.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773213/senza_titolo-43_xxxdop.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773212/senza_titolo-42_dfgoag.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773208/senza_titolo-41_oxziqy.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773206/senza_titolo-40_wnq6q1.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773204/senza_titolo-39_gobo8j.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773202/senza_titolo-38_bjpquj.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773199/senza_titolo-37_vskl2y.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773199/senza_titolo-32_pcof8a.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773198/senza_titolo-36_oviasa.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773197/senza_titolo-35_ubnofh.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773195/senza_titolo-34_c21cqu.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773192/senza_titolo-33_lceakg.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773191/senza_titolo-31_nuc9aw.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773190/senza_titolo-30_biqnh6.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773186/senza_titolo-29_g826eu.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773179/senza_titolo-27_nygb2a.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773178/senza_titolo-26_pd0dlu.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773175/senza_titolo-25_u3mavi.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773172/senza_titolo-24_jltobi.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773170/senza_titolo-23_mcsgws.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773168/senza_titolo-22_j5dubo.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773166/senza_titolo-21_df9ysq.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773163/senza_titolo-20_g8owoc.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773161/senza_titolo-19_qh4ayk.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773160/senza_titolo-18_pjac4l.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773159/senza_titolo-17_gnuame.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773156/senza_titolo-14_cd0uup.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773156/senza_titolo-16_w8hc9o.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773154/senza_titolo-15_tktiz6.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773150/senza_titolo-13_cp3vif.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773147/senza_titolo-12_mud0pk.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773146/senza_titolo-11_bevqek.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773143/senza_titolo-10_i7qczs.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773141/senza_titolo-9_qndovk.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773138/senza_titolo-8_weekpr.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773135/senza_titolo-7_oo7kts.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773131/senza_titolo-5_nnmu1i.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773129/senza_titolo-4_rafrms.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773127/senza_titolo-3_njwdff.jpg",
+            "https://res.cloudinary.com/digxjfslu/image/upload/v1776773126/senza_titolo-2_fgsxgl.jpg"
+        ];
+
+        function mostraGallery(tipo) {
+            const home = document.getElementById('home-page');
+            const gallery = document.getElementById('gallery-page');
+            const griglia = document.getElementById('griglia-foto');
+            const titolo = document.getElementById('titolo-gallery');
+
+            griglia.innerHTML = ''; 
+            home.classList.add('hidden');
+            gallery.style.display = 'block';
+
+            let lista = tipo === 'pov' ? fotoPOV : fotoT2A;
+            titolo.innerText = tipo === 'pov' ? 'P.O.V. GALLERY' : 'TIME2APE GALLERY';
+            titolo.style.color = tipo === 'pov' ? 'var(--pov-pink)' : 'var(--t2a-cyan)';
+
+            lista.forEach(url => {
+                const img = document.createElement('img');
+                img.src = url.replace('/upload/', '/upload/w_600,q_auto,f_auto/'); // Ottimizzazione automatica
+                img.loading = "lazy";
+                griglia.appendChild(img);
+            });
+            window.scrollTo(0,0);
+        }
+
+        function tornaHome() {
+            document.getElementById('home-page').classList.remove('hidden');
+            document.getElementById('gallery-page').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
