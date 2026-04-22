@@ -39,7 +39,7 @@
             background: linear-gradient(to bottom, #11001a 0%, #000 100%);
         }
         
-        .main-logo { width: 300px; max-width: 80%; filter: drop-shadow(0 0 15px rgba(199, 30, 251, 0.4)); }
+        .main-logo { width: 320px; max-width: 85%; filter: drop-shadow(0 0 15px rgba(199, 30, 251, 0.3)); }
 
         .hub-container {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -56,8 +56,8 @@
         .card-pov:hover { border-color: var(--pov-pink); box-shadow: 0 15px 40px rgba(255, 0, 171, 0.2); transform: translateY(-10px); }
         .card-t2a:hover { border-color: var(--t2a-cyan); box-shadow: 0 15px 40px rgba(0, 242, 255, 0.2); transform: translateY(-10px); }
         
-        .card img { max-width: 220px; height: auto; margin-bottom: 30px; }
-        .btn-enter { font-size: 0.7rem; font-weight: 900; letter-spacing: 3px; border: 1px solid #333; padding: 12px 25px; border-radius: 50px; text-transform: uppercase; }
+        .card img { max-width: 240px; height: auto; margin-bottom: 30px; }
+        .btn-enter { font-size: 0.75rem; font-weight: 900; letter-spacing: 3px; border: 1px solid #333; padding: 12px 30px; border-radius: 50px; text-transform: uppercase; }
 
         /* --- GALLERY --- */
         #gallery-page { display: none; width: 100%; animation: fadeIn 0.4s ease; }
@@ -88,18 +88,18 @@
 
     <div id="home-page">
         <header>
-            <img src="https://res.cloudinary.com/digxjfslu/image/upload/v1740003058/TIMELESS_2_ezvclq.jpg" class="main-logo" alt="Timeless Logo">
+            <img src="https://res.cloudinary.com/digxjfslu/image/upload/v1776864938/TIMELESS_3_adaqtc.png" class="main-logo" alt="Timeless">
         </header>
 
         <div class="hub-container">
             <div class="card card-pov" onclick="mostraGallery('pov')">
-                <img src="https://res.cloudinary.com/digxjfslu/image/upload/v1740003058/LOGO_NEON_q3tpxq.jpg" alt="POV Logo">
-                <div class="btn-enter">Sfoglia Gallery</div>
+                <img src="https://res.cloudinary.com/digxjfslu/image/upload/v1776864950/LOGO_NEON_1_pk6wb7.png" alt="POV">
+                <div class="btn-enter">Apri Gallery</div>
             </div>
 
             <div class="card card-t2a" onclick="mostraGallery('t2a')">
-                <img src="https://res.cloudinary.com/digxjfslu/image/upload/v1740065426/photo_6001124706695711669_y_mmszvi.png" alt="Time2Ape Logo">
-                <div class="btn-enter">Sfoglia Gallery</div>
+                <img src="https://res.cloudinary.com/digxjfslu/image/upload/v1776864906/photo_6001124706695711669_y_hcjnky.jpg" alt="Time2Ape" style="border-radius: 15px;">
+                <div class="btn-enter">Apri Gallery</div>
             </div>
         </div>
     </div>
@@ -107,7 +107,7 @@
     <div id="gallery-page">
         <div class="gallery-header">
             <h1 id="titolo-gallery" style="letter-spacing: 8px; margin: 0;">GALLERY</h1>
-            <button class="btn-back" onclick="tornaHome()">← TORNA ALLA HOME</button>
+            <button class="btn-back" onclick="tornaHome()">← BACK TO HUB</button>
         </div>
         <div class="photo-grid" id="griglia-foto"></div>
     </div>
